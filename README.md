@@ -1,5 +1,5 @@
 # ChapeauLicorne
-My scripts for the UnicornHat by Pimoroni
+My scripts for the [UnicornHat](https://github.com/pimoroni/unicorn-hat) by Pimoroni
 
 ## sapinnoel.py :christmas_tree:
 
