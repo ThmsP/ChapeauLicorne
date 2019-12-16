@@ -2,11 +2,12 @@
 import unicornhat as UH
 import datetime
 import random
+import time
 
 UH.set_layout(UH.AUTO)
-UH.rotation(0) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
+UH.rotation(90) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
 UH.brightness(0.5)
-u_width,u_height=UH.get_shape()
+# u_width,u_height=UH.get_shape()
 
 tree =             [[3,0], \
               [2,1],[3,1],[4,1], \
@@ -22,9 +23,6 @@ tree =             [[3,0], \
 balls_nbr = min(datetime.datetime.today().day, 25)
 balls = random.sample(tree, balls_nbr)
 
-print balls
-print len(balls)
-
 while True:
   for px in tree: 
     x, y = px
@@ -38,3 +36,4 @@ while True:
       b = 0
     UH.set_pixel(x, y, r, g, b)
     UH.show()
+    time.sleep(2)
