@@ -4,10 +4,21 @@ import datetime
 import random
 import time
 
+print """Draw a christmas tree on the unicorn hat during 1.5h
+                    *
+                  * * *
+                * * * * *
+                  * * *
+                * * * * *
+              * * * * * * *
+                    *
+                    *
+"""
+
+
 UH.set_layout(UH.AUTO)
-UH.rotation(90) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
-UH.brightness(0.5)
-# u_width,u_height=UH.get_shape()
+UH.rotation(270) # tested on pHAT/HAT with rotation 0, 90, 180 & 270
+UH.brightness(0.7)
 
 tree =             [[3,0], \
               [2,1],[3,1],[4,1], \
@@ -23,7 +34,10 @@ tree =             [[3,0], \
 balls_nbr = min(datetime.datetime.today().day, 25)
 balls = random.sample(tree, balls_nbr)
 
-while True:
+
+#This will run during about 1.5h
+it = 0
+while it < 3600:
   for px in tree: 
     x, y = px
     if px in balls:
@@ -36,4 +50,5 @@ while True:
       b = 0
     UH.set_pixel(x, y, r, g, b)
     UH.show()
-    time.sleep(2)
+  time.sleep(1.5)
+  it += 1
